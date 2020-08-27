@@ -17,6 +17,10 @@ class TodoList extends List{
 
     this.usuario = 'João';
   }
+
+  mostraUsuario() {
+    console.log(this.usuario);
+  }
 }
 
 const MinhaLista = new TodoList();
@@ -24,3 +28,5 @@ const MinhaLista = new TodoList();
 document.getElementById('novotodo').onclick = function() {
   MinhaLista.add('Novo todo');
 }
+
+MinhaLista.mostraUsuario();

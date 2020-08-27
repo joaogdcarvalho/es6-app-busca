@@ -56,6 +56,13 @@ var TodoList = /*#__PURE__*/function (_List) {
     return _this;
   }
 
+  _createClass(TodoList, [{
+    key: "mostraUsuario",
+    value: function mostraUsuario() {
+      console.log(this.usuario);
+    }
+  }]);
+
   return TodoList;
 }(List);
 
@@ -64,3 +71,5 @@ var MinhaLista = new TodoList();
 document.getElementById('novotodo').onclick = function () {
   MinhaLista.add('Novo todo');
 };
+
+MinhaLista.mostraUsuario();
