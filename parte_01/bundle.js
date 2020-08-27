@@ -46,9 +46,14 @@ var TodoList = /*#__PURE__*/function (_List) {
   var _super = _createSuper(TodoList);
 
   function TodoList() {
+    var _this;
+
     _classCallCheck(this, TodoList);
 
-    return _super.apply(this, arguments);
+    //chama o método construtor da classe pai
+    _this = _super.call(this);
+    _this.usuario = 'João';
+    return _this;
   }
 
   return TodoList;

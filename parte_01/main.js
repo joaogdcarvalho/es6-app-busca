@@ -10,7 +10,13 @@ class List {
 }
 
 class TodoList extends List{
-  
+  constructor() {
+
+    //chama o método construtor da classe pai
+    super();
+
+    this.usuario = 'João';
+  }
 }
 
 const MinhaLista = new TodoList();
