@@ -1,30 +1,63 @@
-const arr = [1, 3, 4, 5, 8, 9];
+const arr = [1, 3, 4, 5, 6];
 
-// map - percorre vetor e retorna conteúdo de cada item
-const newArr = arr.map(function(item, index) {
-  return item + index;
+/* 
+
+// função anônima
+
+const newArr = arr.map(function(item) {
+  return item * 2;
+
 });
+
+// arrow function - ideal para diminuir verbosidade do código
+
+const newArr = arr.map((item) => {
+  return item * 2;
+});
+
+// arrow function - simplificação 1 parâmetro
+
+const newArr = arr.map(item => {
+  return item * 2;
+});
+
+*/
+
+// arrow function - simplificação função com processamento único
+const newArr = arr.map(item => item * 2);
 
 console.log(newArr);
 
-// reduce - consome todo vetor e transforma em uma única variável, geralmente número
-const sum = arr.reduce(function(total, next){
-  return total + next;
+
+// criação de função com constantes, não recomendável, dê preferência em utilizar function
+const teste1 = () => {
+  return 'text';
+}
+console.log(teste1());
+
+const teste2 = () => [1, 2, 3];
+console.log(teste2());
+
+const teste3 = () => 'teste';
+console.log(teste3());
+
+const teste4 = () => 42;
+console.log(teste4());
+
+// retorna 'undefined', chaves também utilizada para corpo da função  
+const teste5a = () => {
+  nome: 'Mariano'
+};
+console.log(teste5a());
+
+// para retornar objeto diretamente na função, é necessário incluí-lo entre parênteses
+const teste5b = () => ({
+  nome: 'Felipe'
 });
+console.log(teste5b());
 
-console.log(sum);
-
-// filter - percorre vetor retornando itens que respeitam condição passada
-const filter = arr.filter(function(item) {
-  return item % 2 === 0;
-});
-
-console.log(filter);
-
-/* find - utilizado quando necessário verificar se existe informação desejada no array,
-retornando o primeiro índice que aparece ou 'undefined' caso não exista */ 
-const find = arr.find(function(item) {
-  return item === 4;
-})
-
-console.log(find);
+// com a keyword return, parênteses não é necessário
+const teste5c = () => {
+  return { nome: 'João'}
+};
+console.log(teste5c());
