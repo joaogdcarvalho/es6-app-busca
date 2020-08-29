@@ -1,24 +1,29 @@
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+// const não pode ter seu valor reatribuído
+var a = 1;
+a = (_readOnlyError("a"), 3);
+/* mutação é possível dentro de constante, quando objeto é trabalhado 
+com mesmo formato, alterando valores dentro de objeto ou vetor */
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+var usuario = {
+  nome: 'João'
+};
+usuario.nome = 'Cleiton';
+console.log(usuario); //let - keyword para variáveis de escopo
 
-var Matematica = /*#__PURE__*/function () {
-  function Matematica() {
-    _classCallCheck(this, Matematica);
+function teste(x) {
+  var y = 2;
+
+  if (x > 5) {
+    //reatribuição de valor permitido, dentro do escopo
+    var _y = 4;
+    console.log(x, _y);
   }
+} // erro, "y" não está definido, está fora do escopo
 
-  _createClass(Matematica, null, [{
-    key: "soma",
-    value: function soma(a, b) {
-      return a + b;
-    }
-  }]);
 
-  return Matematica;
-}();
-
-console.log(Matematica.soma(1, 2));
+console.log(y);
+teste(10);
