@@ -1,25 +1,28 @@
 "use strict";
 
-// valores padrão de função
-function soma() {
-  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
-  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
-  return a + b;
+var usuario = {
+  nome: 'Antonio',
+  idade: 29,
+  endereco: {
+    cidade: 'São Paulo',
+    estado: 'SP'
+  }
+}; // busca de valores 
+//const nome = usuario.nome;
+//const idade = usuario.idade;
+//const cidade = usuario.endereco.cidade;
+// busca de valores com conceito de desestruturação
+
+var nome = usuario.nome,
+    idade = usuario.idade,
+    cidade = usuario.endereco.cidade;
+console.log(nome);
+console.log(idade);
+console.log(cidade); // desestruturação com função - no caso está sendo passada propriedade específica de um objeto(usuário) para função
+
+function mostraNome(_ref) {
+  var nome = _ref.nome;
+  console.log(nome);
 }
 
-; // a = 1, b = 6
-
-console.log(soma(1)); // a = 3, b = 6
-
-console.log(soma()); // valores padrão em arrow function
-
-var produto = function produto() {
-  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
-  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
-  return a * b;
-}; // a = 1, b = 6
-
-
-console.log(produto(1)); // a = 3, b = 6
-
-console.log(produto());
+mostraNome(usuario);
