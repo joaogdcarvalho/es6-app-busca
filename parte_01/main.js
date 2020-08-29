@@ -1,26 +1,30 @@
-// const não pode ter seu valor reatribuído
-const a = 1;
-a = 3;
+const arr = [1, 3, 4, 5, 8, 9];
 
-/* mutação é possível dentro de constante, quando objeto é trabalhado 
-com mesmo formato, alterando valores dentro de objeto ou vetor */
-const usuario = { nome: 'João'};
-usuario.nome = 'Cleiton';
-console.log(usuario);
+// map - percorre vetor e retorna conteúdo de cada item
+const newArr = arr.map(function(item, index) {
+  return item + index;
+});
 
-//let - keyword para variáveis de escopo
-function teste(x) {
-  let y = 2;
+console.log(newArr);
 
-  if (x>5) {
-    //reatribuição de valor permitido, dentro do escopo
-    let y = 4;
+// reduce - consome todo vetor e transforma em uma única variável, geralmente número
+const sum = arr.reduce(function(total, next){
+  return total + next;
+});
 
-    console.log(x, y);
-  }
-}
+console.log(sum);
 
-// erro, "y" não está definido, está fora do escopo
-console.log(y);
+// filter - percorre vetor retornando itens que respeitam condição passada
+const filter = arr.filter(function(item) {
+  return item % 2 === 0;
+});
 
-teste(10);
+console.log(filter);
+
+/* find - utilizado quando necessário verificar se existe informação desejada no array,
+retornando o primeiro índice que aparece ou 'undefined' caso não exista */ 
+const find = arr.find(function(item) {
+  return item === 4;
+})
+
+console.log(find);

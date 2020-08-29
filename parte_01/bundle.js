@@ -1,29 +1,25 @@
 "use strict";
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+var arr = [1, 3, 4, 5, 8, 9]; // map - percorre vetor e retorna conteúdo de cada item
 
-// const não pode ter seu valor reatribuído
-var a = 1;
-a = (_readOnlyError("a"), 3);
-/* mutação é possível dentro de constante, quando objeto é trabalhado 
-com mesmo formato, alterando valores dentro de objeto ou vetor */
+var newArr = arr.map(function (item, index) {
+  return item + index;
+});
+console.log(newArr); // reduce - consome todo vetor e transforma em uma única variável, geralmente número
 
-var usuario = {
-  nome: 'João'
-};
-usuario.nome = 'Cleiton';
-console.log(usuario); //let - keyword para variáveis de escopo
+var sum = arr.reduce(function (total, next) {
+  return total + next;
+});
+console.log(sum); // filter - percorre vetor retornando itens que respeitam condição passada
 
-function teste(x) {
-  var y = 2;
+var filter = arr.filter(function (item) {
+  return item % 2 === 0;
+});
+console.log(filter);
+/* find - utilizado quando necessário verificar se existe informação desejada no array,
+retornando o primeiro índice que aparece ou 'undefined' caso não exista */
 
-  if (x > 5) {
-    //reatribuição de valor permitido, dentro do escopo
-    var _y = 4;
-    console.log(x, _y);
-  }
-} // erro, "y" não está definido, está fora do escopo
-
-
-console.log(y);
-teste(10);
+var find = arr.find(function (item) {
+  return item === 4;
+});
+console.log(find);
