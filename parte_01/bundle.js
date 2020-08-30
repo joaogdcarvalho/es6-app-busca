@@ -1,8 +1,17 @@
 "use strict";
 
-var nome = 'Debora';
-var idade = 19; // CONCATENAÇÃO DE STRINGS
+var nome = 'Eduardo';
+var idade = 42;
+var usuario = {
+  nome: nome,
+  idade: idade,
+  empresa: 'Rocketseat'
+};
+console.log(usuario); // OBJECT SHORT SYNTAX
 
-console.log('Meu nome é ' + nome + ' e tenho ' + idade + ' anos.'); // TEMPLATE LITERALS
-
-console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade, " anos."));
+var usuario1 = {
+  nome: nome,
+  idade: idade,
+  empresa: 'Rocketseat'
+};
+console.log(usuario1);

@@ -1,8 +1,17 @@
-const nome = 'Debora';
-const idade = 19;
+const nome = 'Eduardo';
+const idade = 42;
 
-// CONCATENAÇÃO DE STRINGS
-console.log('Meu nome é ' + nome + ' e tenho ' + idade + ' anos.');
+const usuario = {
+  nome: nome,
+  idade: idade,
+  empresa: 'Rocketseat',
+};
+console.log(usuario);
 
-// TEMPLATE LITERALS
-console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+// OBJECT SHORT SYNTAX
+const usuario1 = {
+  nome,
+  idade,
+  empresa: 'Rocketseat',
+};
+console.log(usuario1);
