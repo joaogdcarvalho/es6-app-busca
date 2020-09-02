@@ -1,26 +1,35 @@
-class Usuario {
 
-  constructor(email, senha){
-    this.email = email,
-    this.senha = senha
-  };
+const usuarios = [
+  { nome:'Diego', idade: 23, empresa:'Rocketseat' },
+  { nome:'Gabriel', idade: 15, empresa: 'Rocketseat' },
+  { nome:'Lucas', idade: 30, empresa: 'Facebook' },
+];
 
-  isAdmin() {
-    return this.admin === true;
-  };
-}
+// 2.1 Utilizando o map
+var usuarios_idade = usuarios.map(
+  item => item.idade
+);
+console.log(usuarios_idade);
 
-class Admin extends Usuario {
+// 2.2 Utilizando o filter
+var usuarios_rocketseat_mais18 = usuarios.filter(
+  item => item.empresa === 'Rocketseat' && item.idade >= 18
+);
+console.log(usuarios_rocketseat_mais18);
 
-  constructor(email, senha) {
-    super(email, senha);
-    this.admin = true;
-  };
+// 2.3 Utilizando o find
+var usuarios_google = usuarios.find(
+  item => item.empresa === 'Google'
+);
+console.log(usuarios_google);
 
-}
-
-const User1 = new Usuario('email@teste.com', 'senha123');
-const Adm1 = new Admin('email@teste.com', 'senha123');
-
-console.log(User1.isAdmin());
-console.log(Adm1.isAdmin());
+// 2.4 Unindo operações
+var unindo_operacoes = 
+  usuarios
+    .map(
+      item => ({...item, idade: item.idade * 2})
+    )
+    .filter(
+      item => item.idade <= 50
+    );
+console.log(unindo_operacoes);
