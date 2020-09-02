@@ -1,35 +1,18 @@
+// 3.1
+const arr = [1, 2, 3, 4, 5];
+arr.map(item => item + 10);
 
-const usuarios = [
-  { nome:'Diego', idade: 23, empresa:'Rocketseat' },
-  { nome:'Gabriel', idade: 15, empresa: 'Rocketseat' },
-  { nome:'Lucas', idade: 30, empresa: 'Facebook' },
-];
+// 3.2
+const usuario = { nome: 'Diego', idade: 23 };
+const mostraIdade = usuario => usuario.idade;
+mostraIdade(usuario);
 
-// 2.1 Utilizando o map
-var usuarios_idade = usuarios.map(
-  item => item.idade
-);
-console.log(usuarios_idade);
+// 3.3
+const nome = 'Diego';
+const idade = 23;
+const mostraUsuario = (nome = 'Diego', idade = 18) => ({nome, idade});
+mostraUsuario(nome, idade);
+mostraUsuario(nome);
 
-// 2.2 Utilizando o filter
-var usuarios_rocketseat_mais18 = usuarios.filter(
-  item => item.empresa === 'Rocketseat' && item.idade >= 18
-);
-console.log(usuarios_rocketseat_mais18);
-
-// 2.3 Utilizando o find
-var usuarios_google = usuarios.find(
-  item => item.empresa === 'Google'
-);
-console.log(usuarios_google);
-
-// 2.4 Unindo operações
-var unindo_operacoes = 
-  usuarios
-    .map(
-      item => ({...item, idade: item.idade * 2})
-    )
-    .filter(
-      item => item.idade <= 50
-    );
-console.log(unindo_operacoes);
+// 3.4
+const promise = () => new Promise((resolve,reject) => resolve());
