@@ -1,17 +1,3 @@
-const nome = 'Eduardo';
-const idade = 42;
+import { soma } from './funcoes';
 
-const usuario = {
-  nome: nome,
-  idade: idade,
-  empresa: 'Rocketseat',
-};
-console.log(usuario);
-
-// OBJECT SHORT SYNTAX
-const usuario1 = {
-  nome,
-  idade,
-  empresa: 'Rocketseat',
-};
-console.log(usuario1);
+console.log(soma(1,2));
