@@ -1,34 +1,17 @@
-const minhaPromise = () => new Promise((resolve, reject) => {
-  setTimeout(() => { resolve('OK') }, 2000);
-});
+import axios from 'axios';
 
-/* declaração padrão promise
+class Api {
+  static async getUserInfo(username) {
+    try {
+      const response = await axios.get(`https://api.github.com/users/${username}`);
 
-minhaPromise()
-.then(response => {
-  console.log(response);
-})
-.catch(err => {
-
-});
-
-*/
-
-/* declaração async function - menos verbosa
-
-async function executaPromise() {
-  console.log(await minhaPromise());
-  console.log(await minhaPromise());
-  console.log(await minhaPromise());
+      console.log(response);
+    }
+    catch(err) {
+      console.warn('Erro na API');
+    }
+  }
 }
 
-*/
-
-// declaração async function - arrow function
-const executaPromise = async () => {
-  console.log(await minhaPromise());
-  console.log(await minhaPromise());
-  console.log(await minhaPromise());
-};
-
-executaPromise();
+Api.getUserInfo('joaogdcarvalho');
+Api.getUserInfo('joaogdcarvalho8271hnb');
