@@ -23,6 +23,7 @@
     "dsf": "babel ./desafio/main.js -o ./desafio/bundle_dsf.js -w"
   },
   "dependencies": {
-    "axios": "^0.20.0"
+    "axios": "^0.20.0",
+    "yarn": "^1.22.5"
   }
 }
