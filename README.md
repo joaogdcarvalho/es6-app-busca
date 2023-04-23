@@ -1,2 +1,2 @@
-# rocketseat starter - es6 +
-Estudo aprofundado de Javascript com ECMAScript 2015 (também conhecido como ES6), consiste em um conjunto anual de melhorias para disponibilização de novas funcionalidades da linguagem.
+# Rocketseat Starter - ES6+
+Estudo aprofundado de Javascript, com foco no ECMAScript 2015 (também conhecido como ES6), essa versão da linguagem introduziu um conjunto anual de melhorias e novas funcionalidades, tornando o Javascript ainda mais poderoso e versátil.
